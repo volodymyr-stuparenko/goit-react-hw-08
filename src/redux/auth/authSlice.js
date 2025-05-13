@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { login, logout, refreshUser, register } from './operations';
+import toast from 'react-hot-toast';
 
 const initialState = {
   user: {
@@ -37,10 +38,10 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isRefreshing = false;
       })
-      .addCase(refreshUser.pending, (state) => {
+      .addCase(refreshUser.pending, (state, action) => {
         state.isRefreshing = true;
       })
-      .addCase(refreshUser.rejected, (state) => {
+      .addCase(refreshUser.rejected, (state, action) => {
         state.isRefreshing = false;
       });
   },

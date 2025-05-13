@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const initialState = {
   items: [],
-  loading: false,
+  isLoading: false,
   error: null,
 };
 
@@ -44,7 +44,7 @@ const buildCase = (builder) => {
   return result;
 };
 
-const contactsSlice = createSlice({
+const slice = createSlice({
   name: 'contacts',
   initialState,
   extraReducers: (builder) => {
@@ -75,4 +75,4 @@ const contactsSlice = createSlice({
   },
 });
 
-export default contactsSlice.reducer;
+export default slice.reducer;

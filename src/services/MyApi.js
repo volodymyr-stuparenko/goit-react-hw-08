@@ -3,11 +3,11 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://connections-api.goit.global/';
 
 export const setAuthHeader = (token) => {
-  goitAPI.defaults.headers.common.Authorization = `Bearer ${token}`;
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const removeAuthHeader = () => {
-  goitAPI.defaults.headers.common.Authorization = ``;
+  axios.defaults.headers.common.Authorization = ``;
 };
 
 export const signup = async ({ name, email, password }) => {
